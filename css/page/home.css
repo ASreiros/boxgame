@@ -30,6 +30,9 @@
     width: 100%;
     height: 100%;
     background-color: lightblue; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .smallboxR{
@@ -42,8 +45,11 @@
 .ball{
     border-radius: 50%;
     border: 1px rgb(0, 0, 0, 0.3) solid;
-    width:70%;
-    font-size: 16px;
-    padding: 2em;
+    height:40px;
+    width:40px;
+    font-size: 14px;
+    line-height: 14px;
+   padding-top: 13px;
+    text-align: center;
 }
 

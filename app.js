@@ -52,11 +52,14 @@ const boxforball = document.querySelector(`#l${i}`);
 const ball = document.createElement(`p`);
 const ballnumber = document.createTextNode(`${randomArr[0]}`)
 ball.classList.add("ball")
-ball.style.color = "white" // tures buti invertinta spalva
-ball.style.backgroundColor = "green" //tures buti random
+const color1 = rand(0,255);
+const color2 = rand(0,255);
+const color3 = rand(0,255);
+ball.style.color = `rgb(0, 0, 0)`
+ball.style.backgroundColor = `rgb(${color1}, ${color2}, ${color3})` 
 
 
-
+randomArr.shift();
 ball.appendChild(ballnumber);
 boxforball.appendChild(ball);   
 }
