@@ -113,6 +113,7 @@ ball.addEventListener("click", () => {
         if (gamechecker === 25){
             info.innerHTML = "you won!!!"
             clearTimeout(myTimeout);
+            highscorechecker();
         }else{
             gamechecker++;
         }
@@ -164,3 +165,23 @@ t++
 myTimeout = setTimeout(stopwatch, 100)   
 }
 
+let highscore1 = 60399;
+let highscore2 = 60399;
+let highscore3 = 60399;
+
+
+function highscorechecker(){
+    if (t < highscore1) {
+        highscore3 = highscore2;
+        highscore2 = highscore1;
+        highscore1 = t;
+    } else{if(t < highscore2){
+        highscore3 = highscore2;
+        highscore2 = t;
+    } else{ if(t < highscore3){
+        highscore3 = t;
+    }
+    }
+    }
+    t = 0;
+}
