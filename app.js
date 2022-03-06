@@ -14,6 +14,7 @@ bbs.addEventListener("click", () => {
     bbs.classList.remove("bbshown");
     bbc.classList.remove("bbhiden");
     bbc.classList.add("bbshown");
+    info.innerHTML = ""
     stopwatch();
     ballgenerator()   
 })
@@ -105,10 +106,12 @@ ball.style.backgroundColor = `rgb(${color1}, ${color2}, ${color3})`
 randomArr.shift();
 ball.appendChild(ballnumber);
 boxforball.appendChild(ball);   
-ball.addEventListener("click", () => {
+ball.addEventListener("click", iclick)
+function iclick() {
     if(ball.id === `bb${gamechecker}`){
     const house = document.getElementById(`r${gamechecker}`)
     const iball = document.getElementById(`bb${gamechecker}`)
+    ball.removeEventListener("click",iclick)
     house.appendChild(iball)
         if (gamechecker === 25){
             info.innerHTML = "you won!!!"
@@ -145,7 +148,7 @@ ball.addEventListener("click", () => {
     } 
     }
     
-    })
+    }
 }
 }
 
