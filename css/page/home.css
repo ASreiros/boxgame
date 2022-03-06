@@ -6,13 +6,39 @@
   min-height: 70vh;
 }
 
+.firsttext{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.secondtext{
+    font-size: 25px;
+}
+
+.thirdtext{
+    font-size: 16px;
+    margin: 10px; 
+}
+
+.support-box{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width:80vw;
+    min-height:76px;
+    min-width: 600px;
+    gap: 10px;
+}
+
+
+
 .clock-holder{
     width:300px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     min-height: 50px;
-    background-color: darkcyan;   
+    background-color: darkcyan; 
 }
 
 .clock{
@@ -21,14 +47,35 @@
     color: pink;
 }
 .bbshown{
-padding: 20px 10px;
-background-color: lightskyblue; 
-cursor:pointer;
+    display: block;    
+    padding: 20px 10px;
+    background-color: lightskyblue; 
+    cursor:pointer;
 }
 
 .bbhiden{
     display:none;
 }
+
+.highscore{
+    background-color: darkcyan; 
+    width: 300px;
+    text-align: center;
+}
+
+.highscore-name{
+    height: 20px;
+    color: pink;
+}
+
+.hscore{
+    background-color: lightskyblue; 
+    border: 1px solid grey; 
+    line-height: 17px; 
+    text-align: left;  
+}
+
+
 
 .box-holder{
     width:80vw;
@@ -47,6 +94,13 @@ cursor:pointer;
         flex-direction: column;
         justify-content:flex-start;
     }  
+    .support-box{
+        height:160px;
+        width: 300px;
+        min-width: 300px;
+        flex-direction: column;
+        justify-content:space-between;
+    }
 }
 
 .box{
