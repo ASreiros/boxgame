@@ -26,7 +26,7 @@ bbc.addEventListener("click", () => {
     clearTimeout(myTimeout);
     clock.innerHTML = "00:00:00" 
     gamechecker = 1;
-    t = 1;
+    t = -1;
     info.innerHTML = "Press start to play again"
     for (let i = 1; i < 26; i++) {
     document.querySelector(`#l${i}`).innerHTML = "";
@@ -152,22 +152,22 @@ ball.addEventListener("click", () => {
 
 const clock = document.querySelector("#clock")
 clock.innerHTML = "00:00:00"
-let t = 0;
+let t = -1;
 
-function stopwatch() {   
+function stopwatch() {  
+t++     
 let t1 = Math.trunc(t/6000);
 let t2 = Math.trunc((t - t1*6000)/600)
 let t3 = Math.trunc((t - t1*6000 - t2*600)/100)
-let t4 = Math.trunc((t - - t1*6000 - t2*600 - t3*100)/10)
+let t4 = Math.trunc((t - t1*6000 - t2*600 - t3*100)/10)
 let t5 = Math.trunc(t % 10)
 clock.innerHTML = `${t1}${t2}:${t3}${t4}:${t5}0`
-t++
 myTimeout = setTimeout(stopwatch, 100)   
 }
 
-let highscore1 = 60399;
-let highscore2 = 60399;
-let highscore3 = 60399;
+let highscore1 = 60000;
+let highscore2 = 60000;
+let highscore3 = 60000;
 
 
 function highscorechecker(){
@@ -183,5 +183,34 @@ function highscorechecker(){
     }
     }
     }
-    t = 0;
+    if (highscore1 !== 60000) {
+    document.querySelector("#hs-1").innerHTML = `1. ${writetime(highscore1)}`;   
+    } else{
+        document.querySelector("#hs-1").innerHTML =  "1.------";    
+    }
+    if (highscore2 !== 60000) {
+        document.querySelector("#hs-2").innerHTML =`2. ${writetime(highscore2)}`;   
+        } else{
+            document.querySelector("#hs-2").innerHTML =  "2.------";    
+        }
+    if (highscore3 !== 60000) {
+        document.querySelector("#hs-3").innerHTML =  `3. ${writetime(highscore3)}`;   
+        } else{
+                document.querySelector("#hs-3").innerHTML =  "3.------";    
+        }
+
+
+    t = -1;
+}
+
+
+
+
+function writetime(tz){
+    let t1 = Math.trunc(tz/6000);
+    let t2 = Math.trunc((tz - t1*6000)/600)
+    let t3 = Math.trunc((tz - t1*6000 - t2*600)/100)
+    let t4 = Math.trunc((tz - t1*6000 - t2*600 - t3*100)/10)
+    let t5 = Math.trunc(tz % 10)
+    return `${t1}${t2}:${t3}${t4}:${t5}0`
 }
