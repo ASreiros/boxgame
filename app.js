@@ -168,9 +168,31 @@ clock.innerHTML = `${t1}${t2}:${t3}${t4}:${t5}0`
 myTimeout = setTimeout(stopwatch, 100)   
 }
 
-let highscore1 = 60000;
-let highscore2 = 60000;
-let highscore3 = 60000;
+let highscore1 = localStorage.getItem("Highscore1")   
+if(highscore1 === null){
+    highscore1 = 60000;
+   localStorage.setItem("Highscore1", highscore1)
+} else{
+    highscore1 = Number(highscore1)
+}
+
+let highscore2 = localStorage.getItem("Highscore2")   
+if(highscore2 === null){
+    highscore2 = 60000;
+   localStorage.setItem("Highscore2", highscore2)
+} else{
+    highscore2 = Number(highscore2)
+}
+
+let highscore3 = localStorage.getItem("Highscore3")   
+if(highscore3 === null){
+    highscore3 = 60000;
+   localStorage.setItem("Highscore3", highscore3)
+} else{
+    highscore3 = Number(highscore3)
+}
+
+setTimeout(writescores, 100)
 
 
 function highscorechecker(){
@@ -178,14 +200,27 @@ function highscorechecker(){
         highscore3 = highscore2;
         highscore2 = highscore1;
         highscore1 = t;
+        localStorage.setItem("Highscore1", highscore1)
+        localStorage.setItem("Highscore2", highscore2)
+        localStorage.setItem("Highscore3", highscore3)
     } else{if(t < highscore2){
         highscore3 = highscore2;
         highscore2 = t;
+        localStorage.setItem("Highscore2", highscore2)
+        localStorage.setItem("Highscore3", highscore3)
     } else{ if(t < highscore3){
         highscore3 = t;
+        localStorage.setItem("Highscore3", highscore3)
     }
     }
     }
+    t = -1;
+    writescores()
+}
+
+function writescores() {
+    
+
     if (highscore1 !== 60000) {
     document.querySelector("#hs-1").innerHTML = `1. ${writetime(highscore1)}`;   
     } else{
@@ -202,9 +237,8 @@ function highscorechecker(){
                 document.querySelector("#hs-3").innerHTML =  "3.------";    
         }
 
+    }
 
-    t = -1;
-}
 
 
 
