@@ -156,3 +156,7 @@
     min-height: 150px;
     text-align: center;
 }
+
+.message-screen > h3{
+    margin-top: 10px;
+}

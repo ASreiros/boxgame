@@ -100,7 +100,7 @@ color4 = "white"
 color4 = "black"    
 }
 ball.style.color = color4
-ball.style.background = `radial-gradient(circle at 15px 15px, rgb(${color1}, ${color2}, ${color3}), #000)` 
+ball.style.background = `radial-gradient(circle at 5px 5px, rgb(${color1}, ${color2}, ${color3}), #000)` 
 //spalvos blokas-end
 
 randomArr.shift();
